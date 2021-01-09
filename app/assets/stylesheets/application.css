@@ -22,12 +22,22 @@
   list-style: none;
 }
 
-a {
-  color: #000;
+a:link {
+  color: black;
 }
 
+a:visited {
+  color: gray;
+}
+
+a:hover {
+  color: white;
+  background: black;
+}
+
+
 body {
-  width: 90%;
+  width: 100%;
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
@@ -35,11 +45,37 @@ body {
 
 
 /*index*/
+.container {
+  padding-bottom: 20px;
+}
+
+.heading {
+  padding-bottom: 20px;
+}
+
 table {
   width: 100%;
 }
 
-.index-link li {
+.t-content{
+  padding: 5px 0;
+}
+
+.t-content li {
   display: inline-block;
   padding: 0 10px;
+}
+
+.content {
+  padding-bottom: 10px;
+}
+
+/*show*/
+.link {
+  display: inline-block;
+}
+
+.show-title,
+.show-body {
+  margin: 33px;
 }

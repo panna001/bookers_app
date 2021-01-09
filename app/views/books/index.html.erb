@@ -1,24 +1,48 @@
 <h1>Books</h1>
-<div class="index">
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+  </tr>
   <% @books.each do |book| %>
-  <div class="index-title">
-    <%= book.title %>
-  </div>
-  <div class="index-body">
-    <%= book.body %>
-  </div>
-  <%= link_to "show", book_path(book) %>
-  <%= link_to "Edit", edit_book_path(book) %>
-  <%= link_to "Destroy", book_path(book), method: :delete %>
+    <tr>
+      <td class="index-title">
+        <%= book.title %>
+      </td>
+      <td class="index-body">
+        <%= book.body %>
+      </td>
+      <td class="index-link">
+        <ul>
+          <li>
+            <%= link_to "show", book_path(book) %>
+          </li>
+          <li>
+            <%= link_to "Edit", edit_book_path(book) %>
+          </li>
+          <li>
+            <%= link_to "Destroy", book_path(book), method: :delete %>
+          </li>
+          
+        </ul>
+      </td>
+    </tr>
   <% end %>
-</div>
+</table>
 
 
 <h1>New book</h1>
+<% if @book.errors.any? %>
+  <% @book.errors.full_message.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
 <%= form_with model: @book, local:true do |f| %>
-<h2>title</h2>
-<%= f.text_field :title %>
-<h2>body</h2>
-<%= f.text_area :body %>
-<%= f.submit "Create book" %>
+  <h2>title</h2>
+  <%= f.text_field :title %>
+  <h2>body</h2>
+  <%= f.text_area :body %>
+  <%= f.submit "Create book" %>
 <% end %>

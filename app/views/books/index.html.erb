@@ -1,0 +1,11 @@
+<h1>Books</h1>
+<div class="index">
+  <% @books.each do |book| %>
+  <div class="index-title">
+    <%= book.title %>
+  </div>
+  <div class="index-body">
+    <%= book.body %>
+  </div>
+  <% end %>
+</div>

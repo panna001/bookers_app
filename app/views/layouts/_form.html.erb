@@ -1,0 +1,20 @@
+<%= form_with model: book, local:true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="content">
+      <p>Title</p>
+      <%= f.text_field :title %>
+    </div>
+    <div class="content">
+      <p>Body</p>
+      <%= f.text_area :body %>
+    </div>
+    <% if current_page?(books_path) %>
+      <div class="content">
+        <%= f.submit "Create Book" %>
+      </div>
+    <% else %>
+      <div class="content">
+        <%= f.submit "Update Book" %>
+      </div>
+    <% end %>
+  <% end %>

@@ -1,9 +1,16 @@
-<h1>Editing Book</h1>
-<%= form_with model:@book, local:true do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
-  <h2>Title</h2>
-  <%= f.text_field :title %>
-  <h2>Body</h2>
-  <%= f.text_area :body %>
-  <%= f.submit "Update Book" %>
-<% end %>
+<div class="container">
+  <h2 class="heading">Editing Book</h2>
+
+  <%= render partial: "layouts/form", locals:{book:@book} %>
+
+</div>
+
+<div class="links">
+  <div class="link">
+    <%= link_to "Show", book_path(@book) %>
+  </div>
+  <span>|</span>
+  <div class="link">
+    <%= link_to "Back", books_path %>
+  </div>
+</div>

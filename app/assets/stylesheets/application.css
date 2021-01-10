@@ -43,6 +43,10 @@ body {
   margin: 33px;
 }
 
+/*top*/
+.top-container {
+  line-height: 18px;
+}
 
 /*index*/
 .container {
@@ -57,12 +61,11 @@ table {
   width: 100%;
 }
 
-.t-content{
+td {
   padding: 5px 0;
 }
 
-.t-content li {
-  display: inline-block;
+.td a {
   padding: 0 10px;
 }
 
@@ -73,6 +76,7 @@ table {
 /*show*/
 .link {
   display: inline-block;
+  padding: 0 5px;
 }
 
 .show-title,

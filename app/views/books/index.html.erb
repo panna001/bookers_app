@@ -8,24 +8,12 @@
     </tr>
     <% @books.each do |book| %>
       <tr>
-        <td class="t-content">
-          <%= book.title %>
-        </td>
-        <td class="t-content">
-          <%= book.body %>
-        </td>
-        <td class="t-content">
-          <ul>
-            <li>
-              <%= link_to "Show", book_path(book) %>
-            </li>
-            <li>
-              <%= link_to "Edit", edit_book_path(book) %>
-            </li>
-            <li>
-              <%= link_to "Destroy", book_path(book), method: :delete %>
-            </li>
-          </ul>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td>
+          <%= link_to "Show", book_path(book), class: "link" %>
+          <%= link_to "Edit", edit_book_path(book), class: "link" %>
+          <%= link_to "Destroy", book_path(book), method: :delete, data:{confirm: "Are you sure?" },class: "link" %>
         </td>
       </tr>
     <% end %>
@@ -34,13 +22,9 @@
 
 <div class="container">
   <h2 class="heading">New book</h2>
-  <% if @book.errors.any? %>
-    <% @book.errors.full_message.each do |message| %>
-      <%= message %>
-    <% end %>
-  <% end %>
 
   <%= form_with model: @book, local:true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
     <div class="content">
       <p>Title</p>
       <%= f.text_field :title %>

@@ -36,6 +36,10 @@ a:hover {
   background: black;
 }
 
+.sucess-message {
+  color: green;
+}
+
 
 body {
   width: 100%;
@@ -47,6 +51,11 @@ body {
 /*top*/
 .top-container {
   line-height: 18px;
+}
+
+.top-container p,
+.top-container a {
+  margin: 33px;
 }
 
 /*index*/
